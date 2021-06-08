@@ -1,0 +1,298 @@
+
+/* visuel du body */
+body{
+    background-color: #8bb06b;
+    counter-reset: article;   /*On initialise le compteur d'article à 0 */
+}
+
+/* Visuel de l'en-tête*/
+header{
+    text-align: center;
+    margin-top: 0%;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background-color: #6aa235;
+    border-radius: 8px 8px 0px 0px;
+
+}
+
+footer{
+    text-align: center;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background-color: #6aa235;
+    bottom: 0;
+    border-radius: 0px 0px 8px 8px;
+}
+
+/*class pour ce qui doit être centré*/
+.centre{
+    text-align: center;
+}
+
+section{
+    border-style: solid;
+    border-width:3px; 
+    border-color: #d9eabe;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 12px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+
+p{
+    text-align: justify;
+}
+
+h2, h3{
+    text-transform: uppercase;
+}
+
+h4{
+    font-size: 20px;
+}
+
+/*Si le texte est trop grand*/
+.petit{
+    overflow: scroll;
+    height: 150px;
+}
+
+/*bloc de toute la page contient le header, le footer et bloc centre*/
+#bloc_page{
+    margin-right: 15%;
+    margin-left: 15%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2%;
+    height: 100%;
+}
+
+/*Bloc du contenu avec bloc gauche et contenu */
+#bloc_centre{
+    display: flex;
+    height: 100%;
+}
+
+/* espace où se trouve le menu */
+#espace-gauche {
+    background-color: rgba(255, 251, 251, 0.993);
+    width: 20%;
+    border-right: 1px solid #d9eabe;
+    border-radius: 0px 0px 0px 8px;
+    float: left; /* placer l'espace à gauche */
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    height: 275px;
+}
+
+/* espace du contenu de la page */
+#contenu{
+    background-color: white;
+    width: 100%;
+    border: 1px;
+    border: solid;
+    height: 100%;
+    border:  #8bb06b;
+    overflow: auto;
+}
+
+
+/* definition du menu */
+#menu_vertical{
+    text-align: center;
+    width: 100%;
+    display: flex;
+}
+
+#menu_vertical, ul{
+    list-style: none;
+    justify-content: flex-start;  /*tableau placé au début du conteneur*/
+    padding-left: 0px;
+    width: 100%;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+#menu_vertical, li {
+    margin: 0 auto;
+    width: 100%;
+    left: 0px;
+}
+
+/*Visuel des lien du tableau*/
+.lien-actif{
+    background-color: #01561b;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.lien {
+    background-color:#6aa235;
+    color: black;
+    text-decoration: none;
+}
+
+
+/*Page Accueil creation d'un compteur d'article on reserve le h4 pour les articles*/
+
+h4::before{
+    counter-increment : article; /*on incrémente le compteur d'article*/
+    content: "Article n°" counter(article) " : "; /*on affiche le compteur*/
+}
+
+/*définition du formulaire*/
+fieldset 
+{
+    border: none;
+    margin: 0 auto;
+}
+
+.section{
+    background-color: #bad06c;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-color: #d8e999;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+legend{
+    font-size: 20px;
+    color: #33490b;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#formulaire{
+    margin: 0 auto; /*centrer le formulaire au milieu*/
+    background-color: #9cbc2b;
+    border-radius: 5px 5px 5px 5px;
+    max-width: 70%;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+}
+
+.button{
+    padding-top: 5px;
+    margin-bottom: 10px;
+}
+
+.texte{
+    /*Pour que tous les champs texte aient la même dimension */
+    width: 80%;
+    box-sizing: border-box;
+}
+
+textarea{
+    /* Pour aligner les champs texte multi‑ligne avec leur étiquette */
+  vertical-align: top;
+
+  /* Pour donner assez de place pour écrire du texte */
+  height: 100px;
+}
+
+#formulaire label{
+    /* Pour être sûrs que toutes les étiquettes ont même taille et sont correctement alignées */
+  display: inline-block;
+  width: 110px;
+  text-align: left;
+}
+
+
+/*on augmente la hauteur des cases de saisi*/
+label input{
+    height: 25px;
+}
+
+#NomJeune{
+    display: none;
+}
+
+/*------------------Menu burger----------------------*/
+/*on va cacher le menu par defaut*/
+.menu_cache{
+    display: none;
+}
+/*selectionner le menu menu_cache uniquement quand la chekbox est coché*/
+.menu_checkbox:checked ~ .menu_cache{ /*~ = on selectionne les éléments ayant pour classe .menu_cache précédé d'un élément avec la classe menu_checked*/
+    display: block;
+}
+/*cacher la chekbox, pour que juste ≡ Menu soit visible*/
+.menu_checkbox{
+    opacity: 0;
+    position: absolute;
+    top: -1000px;
+}
+/*Pour mettre en evidence que la checkbox est sous focus pour les utilisateurs naviguant au clavier*/
+/*on selection label avec .menu-toggle si il est adjacent a chekbocx et on lui ajoute un cadre quand il est focus*/
+.menu_checkbox:focus + .menu-toggle{
+    outline: #a9e99c auto 5px;
+}
+
+.menu-toggle{
+    padding: .5em 1em;
+    background-color: #6aa235;
+}
+
+/*Responsive du menu en dessous de 800px*/
+@media screen and (max-width: 800px){
+    /*L'info disparait*/
+    .disparait{
+        display: none;
+    }
+    .petit{
+        display: none;
+    }
+    /*le bloc de gauche prend juste la place nécessaire au menu*/
+    #espace-gauche{
+        height: 100%;
+        width: 100%;
+        border-radius: 0;
+        background-color: #8bb06b;
+        border: none;
+    }
+    /*on place les bloc les uns au-dessus des autres*/
+    #bloc_centre{
+        flex-direction: column;
+    }
+    /* on met le menu en ligne*/
+    /* on redeclare une liste sans puce avec zero marge interieur et exterieur*/
+    #menu_vertical ul{
+        list-style-type: none;
+    }
+    /* on ecarte legerement les li les uns des autres*/
+    #menu_vertical ul li{
+        margin-left: 2px;
+        float: left;  /*on met les elements a gauche*/
+        width: 30%;  /*on declare l'espace du bouton*/
+        padding: 5px;
+        display: block; /*on met une largeur fixe et identique pour chaque items*/
+    }
+
+}
+
+/*Responsive du menu a partir de 600px*/
+/*on fait disparaitre le menu quand on est en dessous de 600px*/
+@media screen and (max-width: 600px){
+    #menu_vertical{
+        display: none;
+    }
+}
+/*on a créer un deuxième menu qui ne doit pas apparaitre quand on est au dessus de 600px*/
+@media screen and (min-width: 600px){
+    #menu_burger{
+        display: none;
+    }
+}

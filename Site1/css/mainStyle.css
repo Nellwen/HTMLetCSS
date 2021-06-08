@@ -1,0 +1,79 @@
+/*mettre titre en rouge*/
+table h2{
+    color: red;
+}
+
+/*mettre un cadre bleau arrondi autour de l'en-tête*/
+table caption{
+    border-style : solid;
+    border-color: blue;
+    border-width: 5px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+/*Mettre un cadre vert et un fond gris autour du head du tableau*/
+table thead{
+    border-style: solid;
+    border-color:#19e919;
+    border-width: 5px;
+    background-color: grey;
+}
+/*mettre les bordures et le texte en blanc dans le head et centrer le texte*/
+table thead > tr > td{
+    border: 2px solid white;
+    color: white;
+    text-align: center;
+
+}
+/*première colonne en rouge*/
+table tbody td:first-child{
+    border: 2px solid red;
+    color:red;
+    text-align: center;
+}
+
+/* Coloration en gris une ligne sur 2*/
+table tbody tr:nth-child(even) {
+    background-color:#dfdfcd;
+}
+
+/* Coloration en jaune une ligne sur 2 sans première colonne*/
+table tbody tr:nth-child(odd) :not(:first-child) {
+    background-color:#fdfdc0;
+}
+
+/* changer la couleur à partir de la ligne rouge */
+table tbody  tr:nth-child(odd) :nth-child(n+8) {
+    background-color:#fcd983;
+}
+
+table tbody  tr:nth-child(even) :nth-child(n+8) {
+    background-color:#dec995;
+}
+
+
+/*ligne rouge du head et du body*/
+table thead tr:first-child td:nth-child(3) ,
+table thead tr:nth-child(2) td:nth-child(5),
+table thead tr:nth-child(3) td:nth-child(7),
+table tbody td:last-child,
+table tbody td:nth-child(8) {
+    border-left: 5px solid red;
+}
+
+
+/* espacement */
+
+table {
+    table-layout: auto; /*on met en auto pour que le contenu des cellules ne depasse pas*/
+    width: 100%;
+    border-collapse: collapse;  /*coller les bordures entre elles*/
+    border: 1px solid black;
+}
+
+table td{
+    border-collapse: collapse;
+    border: 1px solid black;
+    text-align: right;
+}
+
